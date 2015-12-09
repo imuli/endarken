@@ -141,7 +141,11 @@ function colorize(){
 
 document.addEventListener("DOMContentLoaded", function(event){
 	colorize();
-	var links = document.querySelectorAll('link[rel=stylesheet]');
+	var links = map(document.styleSheets, function(sheet){
+		return sheet.cssRules == null ? sheet.ownerNode : false;
+	}).filter(function(node){
+		return node && node.nodeName == "LINK";
+	});
 	map(links, function(link){
 		var parentNode = link.parentNode;
 		var newLink = document.createElement('link');
