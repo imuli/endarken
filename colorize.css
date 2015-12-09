@@ -1,7 +1,10 @@
 html, body, header {
 	background: #000000 !important;
-	color: #839496;
+	color: #777777 !important;
 }
-input {
-	color: #839496;
+input, textarea {
+	background: #000000 !important;
+	color: #777777 !important;
+	cursor: #777777 !important;
+	border-color: #777777 !important;
 }

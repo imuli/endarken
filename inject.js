@@ -28,30 +28,35 @@ Color.html = function(s){
 var colors = {
 	default: {
 		back:	Color.html('#000000'),
-		fore:	Color.html('#839496'),
+		color:	Color.html('#777777'),
+		border: Color.html('#2b2b2b'),
 	},
 	special: {
-		back:	Color.html('#002b36'),
-		fore:	Color.html('#93a1a1'),
+		back:	Color.html('#2b2b2b'),
+		color:	Color.html('#cfcfcf'),
+		border: Color.html('#777777'),
 	},
-	yellow:	Color.html('#b58900'),
-	orange:	Color.html('#cb4b16'),
-	red:	Color.html('#dc322f'),
-	magenta:	Color.html('#d33682'),
-	violet:	Color.html('#6c71c4'),
-	blue:	Color.html('#268bd2'),
-	cyan:	Color.html('#2aa198'),
-	green:	Color.html('#859900'),
+	link: {
+		back:	Color.html('#000000'),
+		color:	Color.html('#038a29'),
+		border: Color.html('#2b2b2b'),
+	},
 };
 
 function classify(rule){
 	var type = 'special';
-	if(rule.selectorText === undefined)
-		type = "unknown";
-	else if(rule.selectorText.match(/html|body|header|container/)){
+	var it;
+	if(rule.selectorText !== undefined) {
+		it = rule.selectorText;
+	} else if(rule.tagName !== undefined) {
+		it = rule.tagName;
+	} else {
+		return ["unknown", rule];
+	}
+	if(it.match(/(^| )a[^ ]*(,|$)/)) {
+		type = 'link';
+	} else {
 		type = 'default';
-	} else if(rule.selectorText == '.kwd'){
-		type = "default";
 	}
 	return [type, rule];
 }
@@ -90,6 +95,10 @@ function rules(){
 		map(sheet.cssRules, addRule);
 	}
 	map(document.styleSheets, addRule);
+	map(document.querySelectorAll('*'), function(node){
+		if(node.style.length > 0)
+			rules.push(node);
+	});
 	return rules;
 }
 
@@ -99,18 +108,35 @@ function colorize(){
 		var rule = a[1];
 		if(type == 'unknown') return;
 
-		if(isPropertySet(rule.style.backgroundColor)){
-			rule.style.backgroundColor = colors[type].back;
-		}
-		if(isPropertySet(rule.style.boxShadow)){
-			rule.style.backgroundColor = colors[type].back;
-		}
-		if(rule.style.backgroundImage.match(/gradient/)){
-			rule.style.background = colors[type].back;
+		function changeColors(to){
+			return function(attr){
+				if(isPropertySet(rule.style[attr])){
+					rule.style[attr] = rule.style[attr].replace(
+							/rgba?\([0-9., ]+\)|^[a-z]+$|#[0-9a-fA-F]+/g,
+							colors[type][to]);
+				}
+			}
 		}
 
-		if(isPropertySet(rule.style.color)){
-			rule.style.color = colors[type].fore;
+		[	"borderColor", "borderLeftColor", "borderRightColor",
+			"borderTopColor", "borderBottomColor", "boxShadow",
+		].map(changeColors('border'));
+
+		[	"color",
+		].map(changeColors('color'));
+
+		[	"background", "backgroundColor", "backgroundImage",
+		].map(changeColors('back'));
+
+		[	"textShadow",
+		].map(function(attr){
+			if(isPropertySet(rule.style[attr])){
+				rule.style[attr] = "";
+			}
+		});
+
+		if(rule.style.backgroundImage.match(/^url\((data|.*\.jpe?g)/)){
+			rule.style.backgroundImage = "";
 		}
 	});
 }
