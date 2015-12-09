@@ -1,14 +1,14 @@
 {
 	"manifest_version": 2,
-	"name": "colorize",
+	"name": "endarken",
 	"minimum_chrome_version": "24.0.1307.0",
-	"version": "2015.11.30",
+	"version": "2015.12.09",
 	"icons": {
 	},
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"css": ["colorize.css"],
+			"css": ["endarken.css"],
 			"js": ["inject.js"],
 			"run_at": "document_start"
 		}

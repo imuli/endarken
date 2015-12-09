@@ -6,7 +6,7 @@ Intelligently apply a consistant colorscheme across websites.
 ## Usage
 
 Add as a chrom(e|ium) [unpacked extension](https://developer.chrome.com/extensions/getstarted),
-or (more generally) preload inject.js and colorize.css.
+or (more generally) preload inject.js and endarken.css.
 
 ## Copyright
 
