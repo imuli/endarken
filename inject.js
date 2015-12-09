@@ -141,4 +141,19 @@ function colorize(){
 
 document.addEventListener("DOMContentLoaded", function(event){
 	colorize();
+	var links = document.querySelectorAll('link[rel=stylesheet]');
+	map(links, function(link){
+		var parentNode = link.parentNode;
+		var newLink = document.createElement('link');
+		map(link.attributes, function(a){
+			newLink.setAttribute(a.nodeName, a.nodeValue);
+		});
+		newLink.crossOrigin = "anonymous";
+		newLink.addEventListener("load", function(event){
+			parentNode.removeChild(link);
+			console.log(event);
+			colorize();
+		});
+		parentNode.appendChild(newLink);
+	});
 });
