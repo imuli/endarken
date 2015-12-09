@@ -1,6 +1,6 @@
 # Endarken
 
-Intelligently apply a consistant colorscheme across websites.
+Intelligently apply a consistent color scheme across websites.
 
 
 ## Usage
