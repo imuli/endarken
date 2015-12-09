@@ -70,16 +70,11 @@ function map(a, f){
 	return r;
 }
 
-function isPropertySet(property){
-	switch(property){
-	case '':
-	case undefined:
-	case null:
-	case 'initial':
-	case 'inherit':
-		return false;
-	}
-	return true;
+function isPropertySet(property, falseValues){
+	if(falseValues === undefined) falseValues = [];
+	return falseValues
+		.concat(['', undefined, null, 'initial', 'inherit'])
+		.indexOf(property) < 0;
 }
 
 function rules(){
@@ -118,6 +113,13 @@ function colorize(){
 			}
 		}
 
+		if(isPropertySet(rule.style.backgroundImage)){
+			if(rule.style.backgroundImage.match(/^url\((data|.*\.jpe?g)/)
+					|| isPropertySet(rule.style.backgroundRepeat, ['no-repeat'])){
+				rule.style.backgroundImage = "";
+			}
+		}
+
 		[	"borderColor", "borderLeftColor", "borderRightColor",
 			"borderTopColor", "borderBottomColor", "boxShadow",
 		].map(changeColors('border'));
@@ -134,10 +136,6 @@ function colorize(){
 				rule.style[attr] = "";
 			}
 		});
-
-		if(rule.style.backgroundImage.match(/^url\((data|.*\.jpe?g)/)){
-			rule.style.backgroundImage = "";
-		}
 	});
 }
 
