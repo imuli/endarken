@@ -1,0 +1,67 @@
+{
+	"manifest_version": 2,
+	"version": "0.1",
+	"name": "Endarken Theme",
+	"theme": {
+		"images": {
+			"theme_button_background": "button_background.png",
+			"theme_frame": "frame.png",
+			"theme_frame_inactive": "frame_inactive.png",
+			"theme_frame_incognito": "frame_incognito.png",
+			"theme_frame_incognito_inactive": "frame_incognito_inactive.png",
+			"theme_frame_overlay": "frame_overlay.png",
+			"theme_frame_overlay_inactive": "frame_overlay_inactive.png",
+			"theme_ntp_attribution": "ntp_attribution.png",
+			"theme_ntp_background": "ntp_background.png",
+			"theme_product_logo": "product_logo.png",
+			"theme_tab_background": "tab_background.png",
+			"theme_tab_background_incognito": "tab_background_incognito.png",
+			"theme_tab_background_v": "tab_background_v.png",
+			"theme_toolbar": "toolbar.png",
+			"theme_window_controlabackground": "window_control_background.png"
+		},
+		"colors": {
+			"bookmark_text": [ 147, 161, 161 ],
+			"button_background": [ 0, 0, 0 ],
+			"control_background": [ 0, 43, 54 ],
+			"frame": [ 0, 0, 0 ],
+			"frame_inactive": [ 0, 43, 54 ],
+			"frame_incognito": [ 0, 43, 54 ],
+			"frame_incognito_inactive": [ 0, 43, 54 ],
+			"ntp_background": [ 0, 43, 54 ],
+			"ntp_header": [ 181, 137, 0 ],
+			"ntp_link": [36, 70, 0],
+			"ntp_link_underline": [ 38, 139, 210 ],
+			"ntp_section": [ 7, 54, 66 ],
+			"ntp_section_header_rule": [207, 221, 192],	/* no longer used? */
+			"ntp_section_header_rule_light": [207, 221, 192], /* no longer used? */
+			"ntp_section_header_text": [207, 221, 192], /* no longer used? */
+			"ntp_section_header_text_hover": [207, 221, 192], /* no longer used? */
+			"ntp_section_link": [ 38, 139, 210 ],
+			"ntp_section_link_underline": [ 38, 139, 210 ],
+			"ntp_section_text": [ 131, 148, 150 ],
+			"ntp_status_bar_text": [207, 221, 192], /* no longer used? */
+			"ntp_supervised_user_label": [207, 221, 192], /* no longer used? */
+			"ntp_supervised_user_label_background": [207, 221, 192], /* no longer used? */
+			"ntp_supervised_user_label_border": [207, 221, 192], /* no longer used? */
+			"ntp_text": [20, 40, 0],
+			"ntp_text_light": [207, 221, 192],
+			"tab_background_text": [118, 118, 118],
+			"tab_text": [ 14, 125, 197 ],
+			"toolbar": [ 7, 54, 66 ]
+		},
+		"tints": {
+			"buttons": [0.33, 0.5, 0.47],
+			"frame": [0.33, 0.5, 0.47],
+			"frame_inactive": [0.33, 0.5, 0.47],
+			"frame_incognito": [0.33, 0.5, 0.47],
+			"frame_incognito_inactive": [0.33, 0.5, 0.47],
+			"background_tab": [0.33, 0.5, 0.47]
+		},
+		"properties": {
+			"ntp_background_alignment": "bottom",
+			"ntp_background_repeat": "repeat",
+			"ntp_logo_alternate": "repeat"
+		}
+	}
+}
