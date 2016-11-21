@@ -1,3 +1,12 @@
+* {
+	background-color: transparent !important;
+	color: inherit !important;
+}
+
+::selection {
+	background: #1b1b1b !important;
+}
+
 html, body, header {
 	background: #000000 !important;
 	color: #777777 !important;
@@ -6,5 +15,63 @@ input, textarea {
 	background: #000000 !important;
 	color: #777777 !important;
 	cursor: #777777 !important;
-	border-color: #777777 !important;
+	border-color: #068589 !important;
 }
+a, a:visited { color: #078a0c !important; }
+h1 { color: #b75e03 !important; }
+h2 { color: #098948 !important; }
+h3 { color: #548404 !important; }
+h4 { color: #7e5cff !important; }
+h5 { color: #e3057b !important; }
+h6 { color: #0580b8 !important; }
+
+th { color: #7a7b00 !important; }
+
+svg {
+	fill: #777777 !important;
+}
+
+/* syntax highlighting */
+
+/* comments */
+.highlight .pl-c, pre .Comment {
+	color: #3b3b3b !important;
+}
+
+/* keywords */
+.highlight .pl-k, pre .Keyword {
+	color: #b75e03 !important;
+}
+
+/* modules... */
+pre .Module {
+	color: #098948 !important;
+}
+
+/* modules... */
+pre .Number {
+	color: #548404 !important;
+}
+
+/* type */
+pre .PrimitiveType, pre .Type {
+	color: #7e5cff !important;
+}
+
+/* Postulate ??? */
+pre .Postulate {
+	color: #e3057b !important;
+}
+
+/* Symbol ??? */
+pre .Symbol {
+	color: #0580b8 !important;
+}
+
+/* Variables */
+pre .Bound {
+	color: #eb0107 !important;
+}
+
+/* amazon price link */
+span.a-color-base { color: #078a0c !important; }

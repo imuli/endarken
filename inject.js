@@ -38,7 +38,7 @@ var colors = {
 	},
 	link: {
 		back:	Color.html('#000000'),
-		color:	Color.html('#038a29'),
+		color:	Color.html('#078a0c'),
 		border: Color.html('#2b2b2b'),
 	},
 };
@@ -139,25 +139,25 @@ function colorize(){
 	});
 }
 
-document.addEventListener("DOMContentLoaded", function(event){
-	colorize();
-	var links = map(document.styleSheets, function(sheet){
-		return sheet.cssRules == null ? sheet.ownerNode : false;
-	}).filter(function(node){
-		return node && node.nodeName == "LINK";
-	});
-	map(links, function(link){
-		var parentNode = link.parentNode;
-		var newLink = document.createElement('link');
-		map(link.attributes, function(a){
-			newLink.setAttribute(a.nodeName, a.nodeValue);
-		});
-		newLink.crossOrigin = "anonymous";
-		newLink.addEventListener("load", function(event){
-			parentNode.removeChild(link);
-			console.log(event);
-			colorize();
-		});
-		parentNode.appendChild(newLink);
-	});
-});
+//document.addEventListener("DOMContentLoaded", function(event){
+//	colorize();
+//	var links = map(document.styleSheets, function(sheet){
+//		return sheet.cssRules == null ? sheet.ownerNode : false;
+//	}).filter(function(node){
+//		return node && node.nodeName == "LINK";
+//	});
+//	map(links, function(link){
+//		var parentNode = link.parentNode;
+//		var newLink = document.createElement('link');
+//		map(link.attributes, function(a){
+//			newLink.setAttribute(a.nodeName, a.nodeValue);
+//		});
+//		newLink.crossOrigin = "anonymous";
+//		newLink.addEventListener("load", function(event){
+//			parentNode.removeChild(link);
+//			console.log(event);
+//			colorize();
+//		});
+//		parentNode.appendChild(newLink);
+//	});
+//});
