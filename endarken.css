@@ -3,10 +3,6 @@
 	color: inherit !important;
 }
 
-::selection {
-	background: #1b1b1b !important;
-}
-
 html, body, header {
 	background: #000000 !important;
 	color: #777777 !important;
@@ -29,6 +25,21 @@ th { color: #7a7b00 !important; }
 
 svg {
 	fill: #777777 !important;
+}
+
+::-webkit-scrollbar {
+	background-color: #1b1b1b !important;
+}
+::-webkit-scrollbar-corner {
+	background-color: #1b1b1b !important;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #71023e !important;
+}
+
+/* selections / highlights */
+.find-replace-highlight, .find-replace-select {
+	color: #068589 !important;
 }
 
 /* syntax highlighting */
@@ -75,3 +86,35 @@ pre .Bound {
 
 /* amazon price link */
 span.a-color-base { color: #078a0c !important; }
+
+/* wikipedia / wikibooks math */
+img.mwe-math-fallback-image-inline {
+	background-color: #777777 !important;
+}
+
+/* floats and dialogs */
+/* tumblr */
+div.v-center-content {
+	background-color: #000000 !important;
+}
+/* stackedit */
+div.modal-dialog {
+	background-color: #000000 !important;
+}
+/* google */
+div[role="dialog"],div[role="menu"] {
+	background-color: #000000 !important;
+}
+/* freelancer */
+div.ChatBox {
+	background-color: #000000 !important;
+}
+
+::selection {
+	background: #3b3b3b !important;
+	color: #ffffff !important;
+}
+.ace_selection {
+	background: #3b3b3b !important;
+	color: #ffffff !important;
+}
