@@ -2,5 +2,5 @@
 *.zip
 *.crx
 *.pem
-chromium/
+screenshots/
 tmp/
