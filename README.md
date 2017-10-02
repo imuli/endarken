@@ -1,12 +1,11 @@
 # Endarken
 
-Intelligently apply a consistent color scheme across websites.
-
+Invert the luminosity of websites.
 
 ## Usage
 
 Add as a chrom(e|ium) [unpacked extension](https://developer.chrome.com/extensions/getstarted),
-or (more generally) preload inject.js and endarken.css.
+or install from the [chrome webstore](https://chrome.google.com/webstore/detail/endarken/mfajhncjjoclnnfofdflicidpfgbejkb).
 
 ## Copyright
 
