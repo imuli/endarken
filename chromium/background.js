@@ -13,6 +13,9 @@ var invert =
 	'}\n' +
 	'img {' +
 		'filter: invert(100%) hue-rotate(180deg);' +
+	'}\n' +
+	'video {' +
+		'filter: invert(100%) hue-rotate(180deg);' +
 	'}\n';
 
 var normal =
@@ -20,6 +23,9 @@ var normal =
 		'display: none;'
 	'}\n' +
 	'img {' +
+		'filter: unset;' +
+	'}' +
+	'video {' +
 		'filter: unset;' +
 	'}';
 

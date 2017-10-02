@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "endarken",
 	"minimum_chrome_version": "24.0.1307.0",
-	"version": "0.2",
+	"version": "0.2.1",
 	"version_name": "2017-10-02 α",
 	"icons": {
 		"128": "icon-128.png"
