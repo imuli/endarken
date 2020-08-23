@@ -1,7 +1,9 @@
+var version = /Chrome\/([0-9.]+)/.exec(navigator.userAgent)[1];
+var bgcolor = version < "80" ? 'black' : 'white';
 var invert =
 	'html {' +
 		'filter: invert(100%) !important;' +
-		'background: black !important;' +
+		'background: '+bgcolor+' !important;' +
 	'}\n' +
 	'img {' +
 		'filter: invert(100%);' +
