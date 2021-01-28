@@ -1,5 +1,10 @@
 var version = /Chrome\/([0-9.]+)/.exec(navigator.userAgent)[1];
 var bgcolor = version < "80" ? 'black' : 'white';
+var getExtras = (host) => ({
+	'trello.com': '#trello-root { background-image: unset !important; }\n',
+	'harrypotter.fandom.com': 'body { background-color: unset !important; } body::after { background-image: unset !important; } body::before { background-image: unset !important; }\n',
+	'www.facebook.com': 'html#facebook { overflow-y: visible !important; }\n',
+}[host] || '');
 var invert =
 	'html {' +
 		'filter: invert(100%) !important;' +
@@ -36,7 +41,7 @@ function insert(tab, code){
 }
 
 function darken(tab){
-	insert(tab, invert);
+	insert(tab, invert + getExtras((new URL(tab.url)).hostname));
 }
 
 function lighten(tab){
