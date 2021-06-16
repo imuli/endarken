@@ -20,6 +20,8 @@
 		"tabs",
 		"webRequest",
 		"webRequestBlocking",
+		"storage",
+		"contextMenus",
 		"<all_urls>"
 	]
 }
