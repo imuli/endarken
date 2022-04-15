@@ -1,5 +1,5 @@
 var version = /Chrome\/([0-9.]+)/.exec(navigator.userAgent)[1];
-var bgcolor = version < "80" ? 'black' : 'white';
+var bgcolor = version < "80" && version < 100 ? 'black' : 'white';
 
 var disabled = {};
 var extras = {};
